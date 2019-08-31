@@ -7,7 +7,7 @@
   - set_fact:
       sts_region: "{{ Sts.Region
         | default(lookup('env', 'AWS_DEFAULT_REGION')) 
-        | default('us-west-2', true) }}"
+        | default('eu-west-1', true) }}"
   - set_fact:
       Sts: "{{ Sts | combine({'Region': sts_region},recursive=True) }}"
   tags:
